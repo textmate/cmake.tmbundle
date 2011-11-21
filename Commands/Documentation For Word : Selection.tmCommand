@@ -5,7 +5,10 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>. "$TM_SUPPORT_PATH/lib/webpreview.sh"
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+. "$TM_SUPPORT_PATH/lib/webpreview.sh"
 
 COMMAND=`cat | tr -d ' \t' | grep -m1 -o '^\w\+' | tr 'a-z' 'A-Z'`
 
@@ -17,15 +20,37 @@ html_footer
 	<string>line</string>
 	<key>input</key>
 	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>^h</string>
 	<key>name</key>
 	<string>Documentation For Command</string>
-	<key>output</key>
-	<string>showAsHTML</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>cmake</string>
+			<key>locations</key>
+			<array>
+				<string>/opt/local/bin/cmake</string>
+				<string>/usr/local/bin/cmake</string>
+			</array>
+			<key>variable</key>
+			<string>TM_CMAKE</string>
+		</dict>
+	</array>
 	<key>scope</key>
 	<string>source.cmake meta.function-call, source.cmake</string>
 	<key>uuid</key>
 	<string>6AA1ED0A-6E0F-48EC-965C-D57AD98A100B</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
