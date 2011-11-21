@@ -7,10 +7,6 @@
 		<string>CMakeLists.txt</string>
 		<string>cmake</string>
 	</array>
-	<key>foldingStartMarker</key>
-	<string>/\*\*|\{\s*$</string>
-	<key>foldingStopMarker</key>
-	<string>\*\*/|^\s*\}</string>
 	<key>keyEquivalent</key>
 	<string>^~C</string>
 	<key>name</key>
