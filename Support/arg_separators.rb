@@ -9,7 +9,7 @@ commands.each do |cmd|
   cmd = cmd.strip.upcase
   help = `/usr/local/bin/cmake --help-command #{cmd}`
   help.scan(/[a-zA-Z_]+\((.+?)\)/m) do |example|
-    example[0].scan(/[A-Z_]{2,}/) do |constant|
+    example[0].scan(/[A-Z_\d]{2,}/) do |constant|
       constants << constant
     end
   end
