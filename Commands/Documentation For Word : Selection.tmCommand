@@ -48,6 +48,8 @@ html_footer
 	</array>
 	<key>scope</key>
 	<string>source.cmake meta.function-call, source.cmake</string>
+	<key>semanticClass</key>
+	<string>lookup.define.cmake</string>
 	<key>uuid</key>
 	<string>6AA1ED0A-6E0F-48EC-965C-D57AD98A100B</string>
 	<key>version</key>
