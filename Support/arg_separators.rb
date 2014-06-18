@@ -1,4 +1,4 @@
-#!/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby -wKU
+#!/usr/bin/env ruby18 -wKU
 
 commands = `/usr/local/bin/cmake --help-command-list`.to_a
 commands.shift # Skip version number
