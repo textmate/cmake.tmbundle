@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby18 -wKU
+require "#{ENV["TM_SUPPORT_PATH"]}/lib/tm/executor"
+require "#{ENV["TM_SUPPORT_PATH"]}/lib/escape"
+
+flags = [ ]
+flags &lt;&lt; ENV["TM_CTEST_FLAGS"].split(" ") unless ENV["TM_CTEST_FLAGS"].nil?
+
+TextMate::Executor.run(e_sh(ENV["TM_CTEST"] || 'ctest'), flags, :chdir =&gt; ENV["TM_CMAKE_BINARY_DIR"], :verb =&gt; "Running", :noun =&gt; ("tests"), :use_hashbang =&gt; false, :version_args =&gt; '--version')
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>@R</string>
+	<key>name</key>
+	<string>Test</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>ctest</string>
+			<key>locations</key>
+			<array>
+				<string>/opt/local/bin/ctest</string>
+				<string>/usr/local/bin/ctest</string>
+			</array>
+			<key>variable</key>
+			<string>TM_CTEST</string>
+		</dict>
+	</array>
+	<key>scope</key>
+	<string>attr.project.cmake</string>
+	<key>uuid</key>
+	<string>3E4268D0-1708-46BD-B92F-4687C3634E8F</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
