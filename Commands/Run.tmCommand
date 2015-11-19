@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby18 -wKU
+require "#{ENV["TM_SUPPORT_PATH"]}/lib/tm/executor"
+require "#{ENV["TM_SUPPORT_PATH"]}/lib/escape"
+require "#{ENV["TM_SUPPORT_PATH"]}/lib/ui.rb"
+
+TM_CMAKE_SOURCE_DIR = ENV["TM_CMAKE_SOURCE_DIR"] || ENV["TM_PROJECT_DIRECTORY"]
+TM_CMAKE_BINARY_DIR = ENV["TM_CMAKE_BINARY_DIR"]
+
+if TM_CMAKE_BINARY_DIR.nil?
+  if 'Cancel' == TextMate::UI.alert(:critical, "TM_CMAKE_BINARY_DIR is not set.", "Do you want to proceed with an in-source build (not recommended)?", 'Proceed', 'Cancel')
+    exit
+  else
+    TM_CMAKE_BINARY_DIR = ENV["TM_PROJECT_DIRECTORY"]
+  end
+end
+
+Dir.mkdir(TM_CMAKE_BINARY_DIR) unless File.exists?(TM_CMAKE_BINARY_DIR)
+
+flags = [ ]
+flags &lt;&lt; ENV["TM_CMAKE_FLAGS"].split(" ") unless ENV["TM_CMAKE_FLAGS"].nil?
+flags &lt;&lt; e_sh(TM_CMAKE_SOURCE_DIR)
+
+TextMate::Executor.run(e_sh(ENV["TM_CMAKE"] || 'cmake'), flags, :chdir =&gt; TM_CMAKE_BINARY_DIR, :verb =&gt; "Running", :noun =&gt; ("cmake"), :use_hashbang =&gt; false, :version_args =&gt; '--version')
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>@r</string>
+	<key>name</key>
+	<string>Run</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>cmake</string>
+			<key>locations</key>
+			<array>
+				<string>/opt/local/bin/cmake</string>
+				<string>/usr/local/bin/cmake</string>
+			</array>
+			<key>variable</key>
+			<string>TM_CMAKE</string>
+		</dict>
+	</array>
+	<key>scope</key>
+	<string>attr.project.cmake</string>
+	<key>semanticClass</key>
+	<string>process.run.make</string>
+	<key>uuid</key>
+	<string>7ACCEAF1-D208-4D06-98A7-9E06A3FE6C29</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
