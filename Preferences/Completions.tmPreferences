@@ -12,6 +12,7 @@
 		<string>$TM_CMAKE --help-command-list | grep "^$TM_CURRENT_WORD" | tr "[a-z]" "[A-Z]"</string>
 		<key>completions</key>
 		<array>
+			<string>ADD_COMPILE_OPTIONS</string>
 			<string>ADD_CUSTOM_COMMAND</string>
 			<string>ADD_CUSTOM_TARGET</string>
 			<string>ADD_DEFINITIONS</string>
@@ -23,10 +24,26 @@
 			<string>AUX_SOURCE_DIRECTORY</string>
 			<string>BREAK</string>
 			<string>BUILD_COMMAND</string>
+			<string>BUILD_NAME</string>
+			<string>CMAKE_HOST_SYSTEM_INFORMATION</string>
 			<string>CMAKE_MINIMUM_REQUIRED</string>
 			<string>CMAKE_POLICY</string>
 			<string>CONFIGURE_FILE</string>
+			<string>CONTINUE</string>
 			<string>CREATE_TEST_SOURCELIST</string>
+			<string>CTEST_BUILD</string>
+			<string>CTEST_CONFIGURE</string>
+			<string>CTEST_COVERAGE</string>
+			<string>CTEST_EMPTY_BINARY_DIRECTORY</string>
+			<string>CTEST_MEMCHECK</string>
+			<string>CTEST_READ_CUSTOM_FILES</string>
+			<string>CTEST_RUN_SCRIPT</string>
+			<string>CTEST_SLEEP</string>
+			<string>CTEST_START</string>
+			<string>CTEST_SUBMIT</string>
+			<string>CTEST_TEST</string>
+			<string>CTEST_UPDATE</string>
+			<string>CTEST_UPLOAD</string>
 			<string>DEFINE_PROPERTY</string>
 			<string>ELSE</string>
 			<string>ELSEIF</string>
@@ -37,8 +54,10 @@
 			<string>ENDIF</string>
 			<string>ENDMACRO</string>
 			<string>ENDWHILE</string>
+			<string>EXEC_PROGRAM</string>
 			<string>EXECUTE_PROCESS</string>
 			<string>EXPORT</string>
+			<string>EXPORT_LIBRARY_DEPENDENCIES</string>
 			<string>FILE</string>
 			<string>FIND_FILE</string>
 			<string>FIND_LIBRARY</string>
@@ -61,18 +80,25 @@
 			<string>INCLUDE_EXTERNAL_MSPROJECT</string>
 			<string>INCLUDE_REGULAR_EXPRESSION</string>
 			<string>INSTALL</string>
+			<string>INSTALL_FILES</string>
+			<string>INSTALL_PROGRAMS</string>
+			<string>INSTALL_TARGETS</string>
 			<string>LINK_DIRECTORIES</string>
+			<string>LINK_LIBRARIES</string>
 			<string>LIST</string>
 			<string>LOAD_CACHE</string>
 			<string>LOAD_COMMAND</string>
 			<string>MACRO</string>
+			<string>MAKE_DIRECTORY</string>
 			<string>MARK_AS_ADVANCED</string>
 			<string>MATH</string>
 			<string>MESSAGE</string>
 			<string>OPTION</string>
+			<string>OUTPUT_REQUIRED_FILES</string>
 			<string>PROJECT</string>
 			<string>QT_WRAP_CPP</string>
 			<string>QT_WRAP_UI</string>
+			<string>REMOVE</string>
 			<string>REMOVE_DEFINITIONS</string>
 			<string>RETURN</string>
 			<string>SEPARATE_ARGUMENTS</string>
@@ -85,28 +111,24 @@
 			<string>SITE_NAME</string>
 			<string>SOURCE_GROUP</string>
 			<string>STRING</string>
+			<string>SUBDIR_DEPENDS</string>
+			<string>SUBDIRS</string>
+			<string>TARGET_COMPILE_DEFINITIONS</string>
+			<string>TARGET_COMPILE_FEATURES</string>
+			<string>TARGET_COMPILE_OPTIONS</string>
+			<string>TARGET_INCLUDE_DIRECTORIES</string>
 			<string>TARGET_LINK_LIBRARIES</string>
+			<string>TARGET_SOURCES</string>
 			<string>TRY_COMPILE</string>
 			<string>TRY_RUN</string>
 			<string>UNSET</string>
-			<string>VARIABLE_WATCH</string>
-			<string>WHILE</string>
-			<string>BUILD_NAME</string>
-			<string>EXEC_PROGRAM</string>
-			<string>EXPORT_LIBRARY_DEPENDENCIES</string>
-			<string>INSTALL_FILES</string>
-			<string>INSTALL_PROGRAMS</string>
-			<string>INSTALL_TARGETS</string>
-			<string>LINK_LIBRARIES</string>
-			<string>MAKE_DIRECTORY</string>
-			<string>OUTPUT_REQUIRED_FILES</string>
-			<string>REMOVE</string>
-			<string>SUBDIR_DEPENDS</string>
-			<string>SUBDIRS</string>
 			<string>USE_MANGLED_MESA</string>
 			<string>UTILITY_SOURCE</string>
 			<string>VARIABLE_REQUIRES</string>
+			<string>VARIABLE_WATCH</string>
+			<string>WHILE</string>
 			<string>WRITE_FILE</string>
+			<string>add_compile_options</string>
 			<string>add_custom_command</string>
 			<string>add_custom_target</string>
 			<string>add_definitions</string>
@@ -118,10 +140,26 @@
 			<string>aux_source_directory</string>
 			<string>break</string>
 			<string>build_command</string>
+			<string>build_name</string>
+			<string>cmake_host_system_information</string>
 			<string>cmake_minimum_required</string>
 			<string>cmake_policy</string>
 			<string>configure_file</string>
+			<string>continue</string>
 			<string>create_test_sourcelist</string>
+			<string>ctest_build</string>
+			<string>ctest_configure</string>
+			<string>ctest_coverage</string>
+			<string>ctest_empty_binary_directory</string>
+			<string>ctest_memcheck</string>
+			<string>ctest_read_custom_files</string>
+			<string>ctest_run_script</string>
+			<string>ctest_sleep</string>
+			<string>ctest_start</string>
+			<string>ctest_submit</string>
+			<string>ctest_test</string>
+			<string>ctest_update</string>
+			<string>ctest_upload</string>
 			<string>define_property</string>
 			<string>else</string>
 			<string>elseif</string>
@@ -132,8 +170,10 @@
 			<string>endif</string>
 			<string>endmacro</string>
 			<string>endwhile</string>
+			<string>exec_program</string>
 			<string>execute_process</string>
 			<string>export</string>
+			<string>export_library_dependencies</string>
 			<string>file</string>
 			<string>find_file</string>
 			<string>find_library</string>
@@ -156,18 +196,25 @@
 			<string>include_external_msproject</string>
 			<string>include_regular_expression</string>
 			<string>install</string>
+			<string>install_files</string>
+			<string>install_programs</string>
+			<string>install_targets</string>
 			<string>link_directories</string>
+			<string>link_libraries</string>
 			<string>list</string>
 			<string>load_cache</string>
 			<string>load_command</string>
 			<string>macro</string>
+			<string>make_directory</string>
 			<string>mark_as_advanced</string>
 			<string>math</string>
 			<string>message</string>
 			<string>option</string>
+			<string>output_required_files</string>
 			<string>project</string>
 			<string>qt_wrap_cpp</string>
 			<string>qt_wrap_ui</string>
+			<string>remove</string>
 			<string>remove_definitions</string>
 			<string>return</string>
 			<string>separate_arguments</string>
@@ -180,27 +227,22 @@
 			<string>site_name</string>
 			<string>source_group</string>
 			<string>string</string>
+			<string>subdir_depends</string>
+			<string>subdirs</string>
+			<string>target_compile_definitions</string>
+			<string>target_compile_features</string>
+			<string>target_compile_options</string>
+			<string>target_include_directories</string>
 			<string>target_link_libraries</string>
+			<string>target_sources</string>
 			<string>try_compile</string>
 			<string>try_run</string>
 			<string>unset</string>
-			<string>variable_watch</string>
-			<string>while</string>
-			<string>build_name</string>
-			<string>exec_program</string>
-			<string>export_library_dependencies</string>
-			<string>install_files</string>
-			<string>install_programs</string>
-			<string>install_targets</string>
-			<string>link_libraries</string>
-			<string>make_directory</string>
-			<string>output_required_files</string>
-			<string>remove</string>
-			<string>subdir_depends</string>
-			<string>subdirs</string>
 			<string>use_mangled_mesa</string>
 			<string>utility_source</string>
 			<string>variable_requires</string>
+			<string>variable_watch</string>
+			<string>while</string>
 			<string>write_file</string>
 		</array>
 	</dict>
