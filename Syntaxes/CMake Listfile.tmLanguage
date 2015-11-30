@@ -273,7 +273,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>variable.cmake</string>
+			<string>variable.other.cmake</string>
 			<key>patterns</key>
 			<array>
 				<dict>
